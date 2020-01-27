@@ -8,8 +8,6 @@ def hello_pubsub(event, context):
          context (google.cloud.functions.Context): Metadata for the event.
     """
     pubsub_message = base64.b64decode(event['data']).decode('utf-8')
-    #filenm=pubsub_message['name']
-    #content_pub=pubsub_message['content']
     pubsub_dict=eval(pubsub_message)
     filenm=pubsub_dict["name"]
     content_pub=pubsub_dict["content"]
